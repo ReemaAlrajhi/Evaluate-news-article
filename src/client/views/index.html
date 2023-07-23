@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sentiment Analyzer</title>
+    <link rel="stylesheet" href="src/client/styles/resets.scss">
+    <link rel="stylesheet" href="src/client/styles/base.scss">
+    <link rel="stylesheet" href="src/client/styles/header.scss">
+    <link rel="stylesheet" href="src/client/styles/form.scss">
+    <link rel="stylesheet" href="src/client/styles/footer.scss">
+</head>
+
+<body>
+
+    <header>
+        <h1>
+            Sentient Analyzer
+        </h1>
+    </header>
+
+    <main>
+        <p>Enter article URL to discover its sentiment</p>
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <input id="url" type="text" name="input" value="" placeholder="Enter URL">
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return Client.handleSubmit(event)">
+            </form>
+        </section>
+
+        <section class="result">
+            <strong>Form Results:</strong>
+            <div id="results"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pwored by Reema © 2023</p>
+    </footer>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+
+</body>
+
+</html>
